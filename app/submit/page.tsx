@@ -1,88 +1,51 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
-import { PageHero } from "@/components/page-hero";
-import { LeadForm } from "@/components/lead-form";
-import { compounds } from "@/lib/compounds";
+import { TestOrder } from "@/components/test-order";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Submit a Sample or Request a Test",
+  title: "Order a Test or Submit a Sample",
   description:
-    "Ship your research compound to our lab for free testing, or request that we source and test a specific vendor.",
+    "Build a test for your research compound. Standard identity, purity, and quantity testing is free, with optional paid panels for endotoxins, heavy metals, and residual solvents.",
 };
 
 export default function SubmitPage() {
-  const compoundNames = compounds.map((c) => c.name);
-
   return (
     <>
-      <PageHero
-        label="Free testing"
-        title="Send a sample, or order a test."
-        intro="Ship us a vial and we will test it for purity and quantity at no cost. Prefer we buy it blind? Name a compound and a vendor and we will source it ourselves."
-      />
+      <section className="border-b border-line">
+        <Container className="py-12 sm:py-16">
+          <TestOrder />
+        </Container>
+      </section>
 
-      <section className="py-14 sm:py-16">
-        <Container className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <LeadForm
-            submitLabel="Send my request"
-            successTitle="Request received"
-            successBody="We will email you a shipping address and a tracking identifier. Once your sample arrives, testing begins within five business days."
-            fields={[
-              { name: "name", label: "Your name", required: true, placeholder: "First and last" },
-              { name: "email", label: "Email", type: "email", required: true, placeholder: "you@email.com" },
-              {
-                name: "type",
-                label: "Request type",
-                type: "select",
-                required: true,
-                placeholder: "Choose one",
-                options: ["I will ship my own sample", "Source and test a vendor for me"],
-              },
-              {
-                name: "compound",
-                label: "Compound",
-                type: "select",
-                required: true,
-                placeholder: "Select a compound",
-                options: [...compoundNames, "Other, not listed"],
-              },
-              { name: "vendor", label: "Vendor (if known)", placeholder: "Where it came from" },
-              {
-                name: "notes",
-                label: "Anything we should know",
-                type: "textarea",
-                placeholder: "Lot details, label claim in milligrams, storage conditions",
-              },
-            ]}
-          />
-
-          <aside className="space-y-5">
-            <div className="rounded-[var(--radius-card)] bg-white p-7 hairline">
-              <h3 className="font-serif text-xl">What we measure</h3>
-              <ul className="mt-4 space-y-3 text-sm text-muted">
-                <li className="flex gap-3">
-                  <span className="text-cobalt">01</span> Identity by mass spectrometry
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-cobalt">02</span> Purity by reverse phase HPLC
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-cobalt">03</span> Real fill against the label claim
-                </li>
-              </ul>
-            </div>
-            <div className="grain relative overflow-hidden rounded-[var(--radius-card)] surface-cobalt p-7 text-white">
-              <h3 className="font-serif text-xl">Why free</h3>
-              <p className="mt-3 text-sm text-white/80">
-                Every sample you send becomes a public result. The more we test,
-                the harder it gets to sell something the label cannot back up.
+      {/* Disclaimer */}
+      <section className="py-14">
+        <Container>
+          <h2 className="font-serif text-3xl tracking-tight">Just to be clear</h2>
+          <div className="mt-6 grid gap-8 text-sm leading-relaxed text-muted md:grid-cols-2">
+            <p>
+              This web site is provided for educational and informational purposes
+              only and does not constitute medical advice or professional services.
+              The information provided is not intended to diagnose, treat, cure, or
+              prevent any health problem or disease, and those seeking personal
+              medical advice should consult a licensed physician. None of the
+              statements on this site have been evaluated by any regulatory
+              authority.
+            </p>
+            <div className="space-y-4">
+              <p>
+                The {site.shortName} ratings on this site reflect the analysis of
+                tests conducted by or on behalf of {site.name}, and do not
+                constitute an endorsement or recommendation.
               </p>
-              <p className="mt-4 text-sm text-white/60">
-                Ship to {site.name}, {site.location}.
+              <p>Compound testing services are available to United States residents only.</p>
+              <p>
+                {site.name} is not liable for any actions taken based on the
+                information provided on this site. Your usage of the information is
+                subject to our terms of use. For research use only.
               </p>
             </div>
-          </aside>
+          </div>
         </Container>
       </section>
     </>

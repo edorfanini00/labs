@@ -4,7 +4,7 @@ export const site = {
   tagline: "Independent Compound Testing",
   description:
     "We test research compounds for purity and quantity, then publish every result so buyers can verify before they trust.",
-  email: "lab@veridianassay.com",
+  email: "lab@veridiandiagnostics.com",
   location: "Austin, Texas",
   stats: {
     samples: 9124,
