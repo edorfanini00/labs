@@ -13,7 +13,7 @@ export function SiteFooter() {
               <Mark className="h-7 w-7" tone="#b9c2f7" />
               <span className="font-serif text-xl">
                 {site.shortName}
-                <span className="opacity-50"> Assay</span>
+                <span className="opacity-50"> Diagnostics</span>
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/60">

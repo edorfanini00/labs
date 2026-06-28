@@ -58,7 +58,7 @@ export default async function ResultPage({
                 <Mark className="h-8 w-8" tone="#dfe3fb" />
                 <div>
                   <div className="font-serif text-lg leading-none">
-                    {site.shortName} <span className="opacity-60">Assay</span>
+                    {site.shortName} <span className="opacity-60">Diagnostics</span>
                   </div>
                   <div className="label-caps mt-1 text-peri">Certificate of analysis</div>
                 </div>

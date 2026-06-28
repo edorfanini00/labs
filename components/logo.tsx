@@ -46,7 +46,7 @@ export function Logo({
       <Mark className="h-7 w-7 transition-transform duration-500 group-hover:rotate-[12deg]" tone={tone} />
       <span className="font-serif text-[1.35rem] leading-none tracking-tight">
         {site.shortName}
-        <span className="opacity-50"> Assay</span>
+        <span className="opacity-50"> Diagnostics</span>
       </span>
     </Link>
   );

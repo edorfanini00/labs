@@ -25,11 +25,11 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Veridian Assay | Independent Compound Testing",
-    template: "%s | Veridian Assay",
+    default: "Veridian Diagnostics | Independent Compound Testing",
+    template: "%s | Veridian Diagnostics",
   },
   description:
-    "Veridian Assay is an independent laboratory that tests research compounds for purity and quantity, then publishes every result openly so buyers can verify before they trust.",
+    "Veridian Diagnostics is an independent laboratory that tests research compounds for purity and quantity, then publishes every result openly so buyers can verify before they trust.",
 };
 
 export default function RootLayout({

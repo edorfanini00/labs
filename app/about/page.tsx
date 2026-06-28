@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Veridian Assay tests research compounds independently and publishes everything, because a safer market starts with an honest number.",
+    "Veridian Diagnostics tests research compounds independently and publishes everything, because a safer market starts with an honest number.",
 };
 
 export default function AboutPage() {

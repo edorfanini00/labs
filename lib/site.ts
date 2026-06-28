@@ -1,5 +1,5 @@
 export const site = {
-  name: "Veridian Assay",
+  name: "Veridian Diagnostics",
   shortName: "Veridian",
   tagline: "Independent Compound Testing",
   description:

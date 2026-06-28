@@ -1,4 +1,4 @@
-# Veridian Assay
+# Veridian Diagnostics
 
 An independent compound testing website. Buyers can browse every compound in the catalog, see how vendors rank on measured purity and quantity, verify a certificate of analysis, and submit samples for free testing.
 
