@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --color-cobalt: #2f43d6;
+  --color-cobalt-bright: #4a5cf0;
+  --color-cobalt-deep: #1a2378;
+  --color-peri: #b9c2f7;
+  --color-peri-soft: #dfe3fb;
+
+  --color-ink: #0b0d16;
+  --color-ink-soft: #14182a;
+  --color-paper: #ffffff;
+  --color-mist: #f5f6fc;
+  --color-line: #e7e8f2;
+  --color-line-dark: #23263a;
+  --color-muted: #5a6076;
+
+  --color-grade-a: #1f9d63;
+  --color-grade-b: #6aab2f;
+  --color-grade-c: #d39a16;
+  --color-grade-d: #df7327;
+  --color-grade-e: #d23b3b;
+
+  --radius-card: 22px;
+}
+
+:root {
+  --background: #f5f6fc;
+  --foreground: #0b0d16;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-cobalt);
+  color: #fff;
+}
+
+/* refined editorial defaults */
+.font-serif {
+  font-feature-settings: "liga" 1, "kern" 1;
+  letter-spacing: -0.01em;
+}
+
+/* small caps label */
+.label-caps {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* cobalt gradient surfaces from the brand moodboard */
+.surface-cobalt {
+  background:
+    radial-gradient(120% 130% at 12% 8%, #5566f2 0%, #2f43d6 38%, #1c2487 100%);
+}
+.surface-cobalt-soft {
+  background:
+    radial-gradient(130% 130% at 85% 15%, #6072f5 0%, #2f43d6 55%, #1a2378 100%);
+}
+.surface-ink {
+  background:
+    radial-gradient(140% 120% at 80% -10%, #1a2152 0%, #0d1024 45%, #07080f 100%);
+}
+
+/* faint engineering grid used behind hero sections */
+.grid-faint {
+  background-image:
+    linear-gradient(to right, rgba(47, 67, 214, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(47, 67, 214, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* subtle grain so gradients never look flat / synthetic */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+.hairline {
+  border: 1px solid var(--color-line);
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-floaty { animation: floaty 7s ease-in-out infinite; }
+
+@keyframes risein {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-risein { animation: risein 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
